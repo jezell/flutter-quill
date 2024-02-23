@@ -36,52 +36,52 @@ import '../../themes/quill_dialog_theme.dart';
 
 @immutable
 class QuillRawEditorConfigurations extends Equatable {
-  const QuillRawEditorConfigurations({
-    required this.controller,
-    required this.focusNode,
-    required this.scrollController,
-    required this.scrollBottomInset,
-    required this.cursorStyle,
-    required this.selectionColor,
-    required this.selectionCtrls,
-    required this.embedBuilder,
-    required this.autoFocus,
-    this.showCursor = true,
-    this.scrollable = true,
-    this.padding = EdgeInsets.zero,
-    this.readOnly = false,
-    this.disableClipboard = false,
-    this.placeholder,
-    this.onLaunchUrl,
-    this.contextMenuBuilder = defaultContextMenuBuilder,
-    this.showSelectionHandles = false,
-    this.textCapitalization = TextCapitalization.none,
-    this.maxHeight,
-    this.minHeight,
-    this.maxContentWidth,
-    this.customStyles,
-    this.customShortcuts,
-    this.customActions,
-    this.expands = false,
-    this.isOnTapOutsideEnabled = true,
-    this.onTapOutside,
-    this.keyboardAppearance,
-    this.enableInteractiveSelection = true,
-    this.scrollPhysics,
-    this.linkActionPickerDelegate = defaultLinkActionPickerDelegate,
-    this.customStyleBuilder,
-    this.customRecognizerBuilder,
-    this.floatingCursorDisabled = false,
-    this.onImagePaste,
-    this.customLinkPrefixes = const <String>[],
-    this.dialogTheme,
-    this.contentInsertionConfiguration,
-    this.textInputAction = TextInputAction.newline,
-    this.requestKeyboardFocusOnCheckListChanged = false,
-    this.enableScribble = false,
-    this.onScribbleActivated,
-    this.scribbleAreaInsets,
-  });
+  const QuillRawEditorConfigurations(
+      {required this.controller,
+      required this.focusNode,
+      required this.scrollController,
+      required this.scrollBottomInset,
+      required this.cursorStyle,
+      required this.selectionColor,
+      required this.selectionCtrls,
+      required this.embedBuilder,
+      required this.autoFocus,
+      this.showCursor = true,
+      this.scrollable = true,
+      this.padding = EdgeInsets.zero,
+      this.readOnly = false,
+      this.disableClipboard = false,
+      this.placeholder,
+      this.onLaunchUrl,
+      this.contextMenuBuilder = defaultContextMenuBuilder,
+      this.showSelectionHandles = false,
+      this.textCapitalization = TextCapitalization.none,
+      this.maxHeight,
+      this.minHeight,
+      this.maxContentWidth,
+      this.customStyles,
+      this.customShortcuts,
+      this.customActions,
+      this.expands = false,
+      this.isOnTapOutsideEnabled = true,
+      this.onTapOutside,
+      this.keyboardAppearance,
+      this.enableInteractiveSelection = true,
+      this.scrollPhysics,
+      this.linkActionPickerDelegate = defaultLinkActionPickerDelegate,
+      this.customStyleBuilder,
+      this.customRecognizerBuilder,
+      this.floatingCursorDisabled = false,
+      this.onImagePaste,
+      this.customLinkPrefixes = const <String>[],
+      this.dialogTheme,
+      this.contentInsertionConfiguration,
+      this.textInputAction = TextInputAction.newline,
+      this.requestKeyboardFocusOnCheckListChanged = false,
+      this.enableScribble = false,
+      this.onScribbleActivated,
+      this.scribbleAreaInsets,
+      this.opaque = true});
 
   /// Controls the document being edited.
   final QuillController controller;
@@ -314,6 +314,9 @@ class QuillRawEditorConfigurations extends Equatable {
 
   /// Optional insets for the scribble area.
   final EdgeInsets? scribbleAreaInsets;
+
+  /// Whether mouse region should allow pointer events to pass through.
+  final bool opaque;
 
   @override
   List<Object?> get props => [
