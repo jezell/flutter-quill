@@ -79,6 +79,7 @@ class QuillEditorConfigurations extends Equatable {
     this.enableScribble = false,
     this.onScribbleActivated,
     this.scribbleAreaInsets,
+    this.opaque = true,
   });
 
   final QuillSharedConfigurations sharedConfigurations;
@@ -348,6 +349,9 @@ class QuillEditorConfigurations extends Equatable {
   /// Optional insets for the scribble area.
   final EdgeInsets? scribbleAreaInsets;
 
+  /// Whether mouse region should allow pointer events to pass through.
+  final bool opaque;
+
   @override
   List<Object?> get props => [
         placeholder,
@@ -408,6 +412,7 @@ class QuillEditorConfigurations extends Equatable {
     bool? enableScribble,
     void Function()? onScribbleActivated,
     EdgeInsets? scribbleAreaInsets,
+    bool? opaque,
   }) {
     return QuillEditorConfigurations(
       sharedConfigurations: sharedConfigurations ?? this.sharedConfigurations,
@@ -471,6 +476,7 @@ class QuillEditorConfigurations extends Equatable {
       enableScribble: enableScribble ?? this.enableScribble,
       onScribbleActivated: onScribbleActivated ?? this.onScribbleActivated,
       scribbleAreaInsets: scribbleAreaInsets ?? this.scribbleAreaInsets,
+      opaque: opaque ?? this.opaque,
     );
   }
 }
