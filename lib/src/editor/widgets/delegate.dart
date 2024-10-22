@@ -509,6 +509,18 @@ class EditorTextSelectionGestureDetectorBuilder {
   ///    callback.
   @protected
   void onSecondaryTapDown(TapDownDetails details) {
+    if (editor?.widget.controller.editorConfigurations.onSecondaryTapDown !=
+        null) {
+      final handler =
+          editor?.widget.controller.editorConfigurations.onSecondaryTapDown;
+
+      if (handler != null) {
+        final handled = handler(details);
+        if (handled) {
+          return;
+        }
+      }
+    }
     renderEditor?.handleSecondaryTapDown(
         TapDownDetails(globalPosition: details.globalPosition));
     shouldShowSelectionToolbar = true;

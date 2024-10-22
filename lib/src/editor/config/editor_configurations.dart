@@ -89,7 +89,10 @@ class QuillEditorConfigurations extends Equatable {
     this.readOnlyMouseCursor = SystemMouseCursors.text,
     this.onPerformAction,
     this.customLeadingBlockBuilder,
+    this.onSecondaryTapDown,
   });
+
+  final bool Function(TapDownDetails)? onSecondaryTapDown;
 
   final QuillSharedConfigurations sharedConfigurations;
 
